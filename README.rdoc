@@ -22,6 +22,15 @@ I didn't like how <tt>will_paginate</tt> tried to infer the counting sql from th
   <%= render_paginator(@paginator) %>
 
 
+== Installation
+
+  script/plugin install git://github.com/cjbottaro/paginate_izzle.git
+Or if that doesn't work...
+  git clone git://github.com/cjbottaro/paginate_izzle.git vendor/plugins/paginate_izzle
+  mkdir -p app/views/shared
+  cp vendor/plugins/paginate_izzle/partials/* app/views/shared/
+
+
 == More
 
 This plugin is pretty flexible.  You can specify a bunch of rendering options and/or write your own partial to render the widget.  See the documentation for <tt>Paginator::DEFAULT_OPTIONS</tt>, <tt>Paginator#pages</tt> and <tt>_default_paginator.html.erb</tt>.
