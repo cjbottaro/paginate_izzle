@@ -1,0 +1,23 @@
+<div id='<%= html_id %>' class='<%= html_class %>'>
+  <% if page == 1 %>
+    <%= prev_label %>
+  <% else %>
+    <%= pagination_link_to(prev_label, page-1, param_name) %>
+  <% end %>
+  
+  <% pages.each do |p| %>
+    <% if p == page %>
+      <%= p %>
+    <% elsif p == '...' %>
+      <%= p %>
+    <% else %>
+      <%= pagination_link_to(p, p, param_name) %>
+    <% end %>
+  <% end %>
+  
+  <% if page == pages.last %>
+    <%= next_label %>
+  <% else %>
+    <%= pagination_link_to(next_label, page+1, param_name) %>
+  <% end %>
+</div>
